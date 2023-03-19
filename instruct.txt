@@ -1,0 +1,17 @@
+Node :
+1)touch Docker file
+FROM node
+WORKDIR /app
+COPY ./app
+RUN npm install
+EXPOSE 80
+CMD ["node","server.js"]
+docker build .
+2) $ docker run -p 3008:80 sha256:3e80ac292fcfdca5080668726d69b67ba9c65b4ea7f510813e2bf8e0eeed7fc4
+3) docker run -p 3009:80 --name node sha256:3e80ac292fcfdca5080668726d69b67ba9c65b4ea7f510813e2bf8e0eeed7fc4
+4)  $ docker stop node
+$ docker stop cranky
+$ docker container prune
+$ docker image prune
+5)$ docker build -t image-node:1 .
+6) $ docker run -p 3008:80 --rm --name node sha256:de966e015a41db1798d9731479f9116fa33283ddfc0a98644cfa0de7de0bab92
